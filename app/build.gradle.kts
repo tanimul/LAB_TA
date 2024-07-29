@@ -103,8 +103,13 @@ dependencies {
     // Paging-3
     implementation(libs.paging.runtime.ktx)
 
+    //Room for local data storage
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     androidTestImplementation(libs.androidx.room.testing)
+
+    // Data storage and preferences
+    implementation(libs.androidx.datastore.preferences)
+
 
 }
