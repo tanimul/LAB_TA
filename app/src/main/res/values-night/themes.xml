@@ -4,4 +4,9 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="MyEditText">
+        <item name="android:background">@drawable/search_background</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
 </resources>
