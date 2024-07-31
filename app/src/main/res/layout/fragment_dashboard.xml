@@ -5,19 +5,26 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.lab_ta.presentations.fragments.dashboard.presentation.DashboardViewModel" />
+
+        <import type="com.example.lab_ta.presentations.fragments.dashboard.presentation.DashboardUiActions" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".presentations.fragments.dashboard.DashboardFragment">
+        tools:context=".presentations.fragments.dashboard.presentation.DashboardFragment">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civ_user_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="@dimen/margin_size_8dp"
+            android:onClick="@{()->viewModel.uiActions(DashboardUiActions.OnProfile.INSTANCE)}"
             android:layout_marginEnd="@dimen/margin_size_16dp"
             android:src="@drawable/user_image"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +64,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_search"
             tools:itemCount="6"
+            bindContent="@{viewModel.items}"
             tools:listitem="@layout/item_content" />
 
 

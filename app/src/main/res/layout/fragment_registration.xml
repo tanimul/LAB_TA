@@ -5,6 +5,12 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.lab_ta.presentations.fragments.registration.presentation.RegistrationViewModel" />
+
+        <import type="com.example.lab_ta.presentations.fragments.registration.presentation.RegistrationUiActions" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.25" />
+            app:layout_constraintGuide_begin="183dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civ_logo"
@@ -114,6 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/phone"
+                android:inputType="number"
                 android:maxLines="1"
                 android:textSize="@dimen/text_size_20sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -126,6 +133,7 @@
             android:layout_marginHorizontal="@dimen/margin_size_16dp"
             android:layout_marginTop="@dimen/margin_size_20dp"
             android:backgroundTint="@color/color_01579B"
+            android:onClick="@{()->viewModel.uiActions(RegistrationUiActions.OnRegistration.INSTANCE)}"
             android:text="@string/register"
             android:textSize="@dimen/text_size_16sp"
             android:textStyle="bold"

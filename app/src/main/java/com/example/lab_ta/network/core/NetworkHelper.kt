@@ -4,7 +4,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.annotation.Keep
 import androidx.lifecycle.MutableLiveData
-import com.example.lab_ta.utils.extention.toJson
+import com.example.lab_ta.common.extention.toJson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -56,6 +56,7 @@ fun <T : Any> networkCall(
         return@flow
     } else {
         val response = performNetworkCallWithRetries(call)
+        Timber.d("NetworkCall", "$response")
         if (response.isSuccessful) {
             var message: String? = null
             try {

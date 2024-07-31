@@ -1,4 +1,4 @@
-package com.example.lab_ta.utils.extention
+package com.example.lab_ta.common.extention
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

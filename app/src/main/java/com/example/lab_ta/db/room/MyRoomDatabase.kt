@@ -1,29 +1,24 @@
-package bd.com.ratehammer.db.room
+package com.example.lab_ta.db.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.lab_ta.common.domain.model.User
 import com.example.lab_ta.db.room.converter.Converter
-import bd.com.ratehammer.models.fields.ModelFields
-import bd.com.ratehammer.models.legals.ModelLegals
-import bd.com.ratehammer.models.locales.ModelLocales
-import bd.com.ratehammer.models.versions.DataVersions
+import com.example.lab_ta.db.room.dao.UserDao
 
 @Database(
     entities = [
-        DataVersions::class, ModelLocales::class, ModelLegals::class, ModelFields::class],
+        User::class],
     version = 1,
     exportSchema = false
 )
 @TypeConverters(Converter::class)
 abstract class MyRoomDatabase : RoomDatabase() {
 
-    abstract fun dataVersionDao(): DataVersionDao
-    abstract fun localesDao(): LocalesDao
-    abstract fun legalsDao(): LegalsDao
-    abstract fun fieldsDao(): FieldsDao
+    abstract fun userDao(): UserDao
 
     companion object {
 
@@ -39,7 +34,7 @@ abstract class MyRoomDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
             context,
-            MyRoomDatabase::class.java, "rate_hammer_bd"
+            MyRoomDatabase::class.java, "lab_ta"
         )
             .addMigrations()
             .build()

@@ -1,4 +1,4 @@
-package org.tanimul.notes.base
+package com.example.lab_ta.base
 
 import android.content.Context
 import android.os.Bundle

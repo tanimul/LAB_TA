@@ -4,19 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="com.example.lab_ta.presentations.fragments.details.presentation.DetailsViewModel" />
+
+        <import type="com.example.lab_ta.presentations.fragments.details.presentation.DetailsUiActions" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentations.fragments.details.DetailsFragment">
+        tools:context=".presentations.fragments.details.presentation.DetailsFragment">
 
         <ImageButton
             android:id="@+id/ib_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_size_16dp"
+            android:onClick="@{()->viewModel.uiActions(DetailsUiActions.NavigateBack.INSTANCE)}"
             android:background="@null"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"

@@ -9,12 +9,12 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import bd.com.ratehammer.constants.AppConstants.DataStorePref.myPreferences
+import com.example.lab_ta.common.constants.AppConstants.MY_PREFERENCES
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 // Creating data-store
-private val Context.dataStore by preferencesDataStore(name = myPreferences)
+private val Context.dataStore by preferencesDataStore(name = MY_PREFERENCES)
 
 class DataStorePreferences(context: Context) {
 

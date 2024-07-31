@@ -22,7 +22,7 @@ lifecycle = "2.7.0"
 navigation = "2.7.7"
 coroutines = "1.7.3"
 glide = "4.13.0"
-navSafeArgs = "2.5.0"
+navSafeArgs = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

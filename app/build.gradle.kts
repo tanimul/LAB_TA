@@ -111,5 +111,8 @@ dependencies {
     // Data storage and preferences
     implementation(libs.androidx.datastore.preferences)
 
-
+    // RxJava3 Support
+    implementation ("androidx.paging:paging-rxjava3:3.1.1")
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation ("com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0")
 }

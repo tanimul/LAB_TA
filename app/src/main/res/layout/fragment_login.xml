@@ -5,6 +5,12 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.lab_ta.presentations.fragments.login.presentation.LoginViewModel" />
+
+        <import type="com.example.lab_ta.presentations.fragments.login.presentation.LoginUiActions" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,6 +88,7 @@
             android:layout_marginHorizontal="@dimen/margin_size_16dp"
             android:layout_marginTop="@dimen/margin_size_20dp"
             android:backgroundTint="@color/color_01579B"
+            android:onClick="@{()->viewModel.uiActions(LoginUiActions.OnLogin.INSTANCE)}"
             android:text="@string/login"
             android:textSize="@dimen/text_size_16sp"
             android:textStyle="bold"
@@ -97,6 +104,7 @@
             android:layout_marginEnd="-10dp"
             android:layout_marginBottom="@dimen/margin_size_20dp"
             android:backgroundTint="@color/color_01579B"
+            android:onClick="@{()->viewModel.uiActions(LoginUiActions.OnRegistration.INSTANCE)}"
             android:text="@string/new_user_click_here"
             android:textAlignment="textStart"
             android:textAllCaps="false"

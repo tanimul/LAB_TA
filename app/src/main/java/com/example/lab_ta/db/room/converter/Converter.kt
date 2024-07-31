@@ -1,7 +1,7 @@
 package com.example.lab_ta.db.room.converter
 
 import androidx.room.TypeConverter
-import com.example.lab_ta.utils.extention.fromJson
+import com.example.lab_ta.common.extention.fromJson
 import com.google.gson.Gson
 
 class Converter {

@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
-
+import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 @Module
 @InstallIn(ActivityRetainedComponent::class)
 @Keep
@@ -54,6 +54,7 @@ object ActivityModule {
             .baseUrl(baseUrl)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
     }
 

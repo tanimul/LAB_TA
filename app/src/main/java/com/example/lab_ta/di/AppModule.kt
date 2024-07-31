@@ -4,9 +4,15 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import androidx.annotation.Keep
-import bd.com.ratehammer.db.room.MyRoomDatabase
-import com.example.lab_ta.utils.DataStorePreferences
 import com.example.lab_ta.common.constants.AppConstants
+import com.example.lab_ta.db.room.MyRoomDatabase
+import com.example.lab_ta.presentations.fragments.login.data.LoginRepositoryImpl
+import com.example.lab_ta.presentations.fragments.login.domain.repository.LoginRepository
+import com.example.lab_ta.presentations.fragments.profile.data.ProfileRepositoryImpl
+import com.example.lab_ta.presentations.fragments.profile.domain.repository.ProfileRepository
+import com.example.lab_ta.presentations.fragments.registration.data.RegistrationRepositoryImpl
+import com.example.lab_ta.presentations.fragments.registration.domain.repository.RegistrationRepository
+import com.example.lab_ta.utils.DataStorePreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,5 +47,18 @@ object AppModule {
     fun provideDataStorePreferences(@ApplicationContext context: Context): DataStorePreferences {
         return DataStorePreferences(context)
     }
+
+    @Provides
+    fun provideRegistrationRepository(registrationRepositoryImpl: RegistrationRepositoryImpl): RegistrationRepository =
+        registrationRepositoryImpl
+
+    @Provides
+    fun provideLoginRepository(loginRepositoryImpl: LoginRepositoryImpl): LoginRepository =
+        loginRepositoryImpl
+
+    @Provides
+    fun provideProfileRepository(profileRepositoryImpl: ProfileRepositoryImpl): ProfileRepository =
+        profileRepositoryImpl
+
 
 }
